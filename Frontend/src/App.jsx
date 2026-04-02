@@ -8,6 +8,7 @@ import WhyUs from './pages/WhyUs';
 import FAQ from './pages/FAQ';
 import BookNow from './pages/BookNow';
 import Contact from './pages/Contact';
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
           <Route path="/book-now" element={<BookNow />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer/>
+
       </div>
     </Router>
   );
