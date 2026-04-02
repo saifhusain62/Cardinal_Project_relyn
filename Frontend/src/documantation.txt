@@ -1,0 +1,132 @@
+# Project Documentation
+
+## 📌 Project Overview
+
+This project is built using modern frontend technologies for fast performance and clean UI design. It uses Vite as the build tool along with JavaScript and Tailwind CSS for styling.
+
+## 🚀 Technologies Used
+
+* **Vite** – Fast development and build tool
+* **JavaScript (JS)** – Core programming language
+* **Tailwind CSS** – Utility-first CSS framework
+* **React Icons** – For using icons in the UI
+* **Lucide React** – Modern icon library
+* **AOS (Animate On Scroll)** – For scroll-based animations
+
+---
+
+## 📁 Project Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone <repo-link>
+https://github.com/saifhusainrelyn-blip/Cardinal_Project_relyn.git
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Run the Project (Development Mode)
+
+```bash
+npm run dev
+```
+
+* This will start the development server
+* Open your browser and go to:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🏗️ Build the Project (Production)
+
+```bash
+npm run build
+```
+
+* This will generate a `dist` folder with optimized production files
+
+---
+
+## 🔍 Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+## 🎨 Styling
+
+* Tailwind CSS is used for styling
+* You can customize styles inside:
+
+```
+tailwind.config.js
+```
+
+---
+
+## ✨ Animations
+
+* AOS (Animate On Scroll) is used
+* Initialize AOS in your main file:
+
+```js
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
+```
+
+---
+
+## 🎯 Icons Usage
+
+* **React Icons**
+
+```js
+import { FaBeer } from 'react-icons/fa';
+```
+
+* **Lucide React**
+
+```js
+import { Camera } from 'lucide-react';
+```
+
+---
+
+## 📦 Project Structure (Basic)
+
+```
+src/
+ ├── components/
+ ├── assets/
+ ├── App.jsx
+ ├── main.jsx
+```
+
+---
+
+## ⚙️ Notes
+
+* Make sure Node.js is installed
+* Use latest npm version for best compatibility
+
+---
+
+## 📌 Conclusion
+
+This project is optimized for speed and modern UI development using Vite, Tailwind CSS, and animation libraries.
+
+---
