@@ -1,7 +1,17 @@
-import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, Mail, MapPin, Check } from 'lucide-react';
 
 const Footer = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handlePhoneClick = () => {
+    const phoneNumber = '+1 317 527 0908';
+    navigator.clipboard.writeText(phoneNumber).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
   return (
     <footer className="bg-[#0A2540] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -65,18 +75,41 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-[#FF7656] text-lg font-semibold">Contact Us</h3>
             <div className="space-y-3 text-gray-300 text-sm">
-              <div className="flex items-center gap-3 hover:text-[#FF7656] transition-colors cursor-pointer group">
+              {/* Phone - Click to Copy */}
+              <div 
+                onClick={handlePhoneClick}
+                className="flex items-center gap-3 hover:text-[#FF7656] transition-colors cursor-pointer group relative"
+                title="Click to copy phone number"
+              >
                 <Phone size={18} className="flex-shrink-0 text-[#FF7656]" />
                 <span className="group-hover:text-[#FF7656]">+1 317 527 0908</span>
+                {copied && (
+                  <span className="absolute -top-8 left-0 bg-green-500 text-white px-2 py-1 rounded text-xs flex items-center gap-1 whitespace-nowrap">
+                    <Check size={12} />
+                    Copied!
+                  </span>
+                )}
               </div>
-              <div className="flex items-center gap-3 hover:text-[#FF7656] transition-colors cursor-pointer group">
+
+              {/* Email - Click to Open Email Client */}
+              <a 
+                href="mailto:info@cardinalasset.com"
+                className="flex items-center gap-3 hover:text-[#FF7656] transition-colors cursor-pointer group"
+              >
                 <Mail size={18} className="flex-shrink-0 text-[#FF7656]" />
                 <span className="group-hover:text-[#FF7656]">info@cardinalasset.com</span>
-              </div>
-              <div className="flex items-start gap-3 hover:text-[#FF7656] transition-colors cursor-pointer group">
+              </a>
+
+              {/* Address - Click to Open in Maps */}
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=8024+Cardinal+Cove+W,+Indianapolis,+IN+46256"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 hover:text-[#FF7656] transition-colors cursor-pointer group"
+              >
                 <MapPin size={18} className="flex-shrink-0 mt-1 text-[#FF7656]" />
                 <span className="group-hover:text-[#FF7656]">8024 Cardinal Cove W, Indianapolis, IN 46256</span>
-              </div>
+              </a>
             </div>
           </div>
         </div>

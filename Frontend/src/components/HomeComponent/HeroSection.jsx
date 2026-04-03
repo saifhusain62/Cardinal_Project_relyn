@@ -62,37 +62,54 @@ const HeroSection = () => {
         
         {/* Main Heading */}
         <h1 
-          className="text-5xl md:text-6xl lg:text-5xl xl:text-7xl font-bold text-white mb-6 leading-tight"
+          className="text-5xl md:text-6xl lg:text-5xl xl:text-7xl font-bold mb-6 leading-tight"
           data-aos="fade-up"
           data-aos-delay="400"
         >
-          Expert Solution
-          <br />
-          <span className="relative inline-block">
-            {/* Background box for "for" - Hidden on Mobile */}
-            <span 
-              className=" md:absolute bg-[#FF7656] px-7 py-4 rounded-xl text-xl md:text-2xl font-bold text-white z-0"
-              style={{
-                top: '-35px',
-                left: '-40px',
-                transform: 'rotate(-20deg)',
-                transformOrigin: 'center'
-              }}
-              data-aos="rotate-in"
-              data-aos-delay="600"
-            >
-              for
-            </span>
-            <span 
-              className="relative z-10"
-              style={{
-                background: 'linear-gradient(to right, #FFFFFF, #FF7656, #FFFFFF)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}
-            >
-              Every House Problem
+          {/* Mobile Version - With Gradient Text */}
+          <span 
+            className="md:hidden"
+            style={{
+              background: 'linear-gradient(to right, #FFFFFF, #FF7656, #FFFFFF)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
+            Expert Solution
+            <br />
+            for Every House Problem
+          </span>
+          
+          {/* Desktop Version - Original with styled box */}
+          <span className="hidden md:inline text-white">
+            Expert Solution
+            <br />
+            <span className="relative inline-block">
+              <span 
+                className="absolute bg-[#FF7656] px-7 py-4 rounded-xl text-xl md:text-2xl font-bold text-white z-0"
+                style={{
+                  top: '-35px',
+                  left: '-40px',
+                  transform: 'rotate(-20deg)',
+                  transformOrigin: 'center'
+                }}
+                data-aos="rotate-in"
+                data-aos-delay="600"
+              >
+                for
+              </span>
+              <span 
+                className="relative z-10"
+                style={{
+                  background: 'linear-gradient(to right, #FFFFFF, #FF7656, #FFFFFF)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}
+              >
+                Every House Problem
+              </span>
             </span>
           </span>
         </h1>
